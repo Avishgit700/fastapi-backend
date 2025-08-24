@@ -20,3 +20,8 @@ ENV/
 *.sqlite*
 *.db
 *.dump
+
+# Local databases
+app.db
+*.db
+*.sqlite3
