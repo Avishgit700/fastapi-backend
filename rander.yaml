@@ -1,0 +1,22 @@
+ services:
+  - type: web
+    name: todo-api
+    env: docker
+    plan: starter
+    autoDeploy: true
+    disk:
+      name: data
+      mountPath: /app
+      sizeGB: 1
+    healthCheckPath: /health
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: "360"
+      - key: DEMO_ENABLED
+        value: "true"
+      - key: CORS_ORIGINS
+        value: https://your-frontend.vercel.app,https://your-preview.vercel.app,http://localhost:5173

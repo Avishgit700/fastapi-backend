@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .            # <— build from CURRENT folder
+      dockerfile: Dockerfile
+    container_name: todo-api
+    ports:
+      - "8000:8000"         # change left side to 8080 if 8000 is busy
+    env_file:
+      - .env
+    volumes:
+      - ./app.db:/app/app.db
+    restart: unless-stopped
