@@ -31,13 +31,10 @@ uvicorn==0.30.6
 uvloop==0.21.0
 watchfiles==1.1.0
 websockets==15.0.1
-<<<<<<< HEAD
-psycopg[binary]==3.1.18
-=======
 fastapi
 uvicorn
 sqlalchemy
 psycopg2-binary
 python-dotenv
 psycopg2-binary
->>>>>>> 6bab483 (Add Postgres driver (psycopg2-binary) to requirements.txt)
+psycopg[binary]==3.1.19
