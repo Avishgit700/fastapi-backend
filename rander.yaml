@@ -1,14 +1,14 @@
- services:
+services:
   - type: web
     name: todo-api
     env: docker
     plan: starter
     autoDeploy: true
+    healthCheckPath: /health
     disk:
       name: data
       mountPath: /app
       sizeGB: 1
-    healthCheckPath: /health
     envVars:
       - key: SECRET_KEY
         generateValue: true
@@ -19,4 +19,5 @@
       - key: DEMO_ENABLED
         value: "true"
       - key: CORS_ORIGINS
-        value: https://your-frontend.vercel.app,https://your-preview.vercel.app,http://localhost:5173
+        # add your Vercel URL later (no trailing slash)
+        value: https://todo-time-frontend.vercel.app,http://localhost:5173
